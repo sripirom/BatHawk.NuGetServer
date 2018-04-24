@@ -1,8 +1,9 @@
 
 echo "SONARSCANNER_MSBUILD: $SONARSCANNER_MSBUILD"
+echo "NUGET_EXE: $NUGET_EXE"
 
-#sonarScannerMsbuild=$SONARSCANNER_MSBUILD
-sonarScannerMsbuild=/Volumes/MyDrive/SripiromDev/Tools/sonar-scanner-msbuild/SonarScanner.MSBuild.dll 
+sonarScannerMsbuild=$SONARSCANNER_MSBUILD
+#sonarScannerMsbuild=/Volumes/MyDrive/SripiromDev/Tools/sonar-scanner-msbuild/SonarScanner.MSBuild.dll 
 if [ ! -z $1 ]; then
   if [ $1 -lt 0 ] || [ $1 -gt 100 ]; then
     echo "Threshold should be between 0 and 100"
@@ -23,7 +24,7 @@ dotnet $sonarScannerMsbuild begin \
     /s:"$dot/SonarQube.Analysis.xml"
       #/d:sonar.cs.xunit.it.reportsPaths="$dot/TestResult.xml" \
 
-nuget restore ./BatHawk/BatHawk.sln
+mono $NUGET_EXE restore ./BatHawk/BatHawk.sln
 msbuild ./BatHawk/BatHawk.sln
 
 cd tools
