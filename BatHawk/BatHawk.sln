@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatHawk.NuGetServer", "BatHawk.NuGetServer\BatHawk.NuGetServer.csproj", "{83377C8A-9B8D-4674-946A-A3D059C19786}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatHawk.NuGetServer.Tests", "BatHawk.NuGetServer.Tests\BatHawk.NuGetServer.Tests.csproj", "{89B12AF6-4DBC-4669-AA15-6DD0439B8E2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{83377C8A-9B8D-4674-946A-A3D059C19786}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83377C8A-9B8D-4674-946A-A3D059C19786}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83377C8A-9B8D-4674-946A-A3D059C19786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89B12AF6-4DBC-4669-AA15-6DD0439B8E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B12AF6-4DBC-4669-AA15-6DD0439B8E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B12AF6-4DBC-4669-AA15-6DD0439B8E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B12AF6-4DBC-4669-AA15-6DD0439B8E2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

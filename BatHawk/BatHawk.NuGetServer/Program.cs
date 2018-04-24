@@ -9,12 +9,13 @@ namespace BatHawk.NuGetServer
     {
         public static void Main(string[] args)
         {
-
+            Console.WriteLine("Start Program.");
             var rc = HostFactory.Run(c =>
             {
                 // Pass it to Topshelf
                 //c.UseAutofacContainer(container);
-
+                c.UseLinuxIfAvailable();
+                
                 c.Service<NugetService>(s =>
                 {
                     // Let Topshelf use it
@@ -33,6 +34,9 @@ namespace BatHawk.NuGetServer
 
             var exitCode = (int)Convert.ChangeType(rc, rc.GetTypeCode());  
             Environment.ExitCode = exitCode;
+            
+            
+            Console.WriteLine("Stop Program.");
         }
     }
 

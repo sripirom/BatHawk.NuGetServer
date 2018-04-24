@@ -8,8 +8,8 @@ namespace BatHawk.NuGetServer
 {
     public class NugetService : ServiceControl
     {
-        private readonly string baseAddress = ConfigurationManager.AppSettings["BASEADDRESS"];
-        private readonly string watchTimer = ConfigurationManager.AppSettings["WATCHTIMER"];
+        private readonly string _baseAddress = ConfigurationManager.AppSettings["BASEADDRESS"];
+        private readonly string _watchTimer = ConfigurationManager.AppSettings["WATCHTIMER"];
         private IDisposable _app;
 
 
@@ -18,7 +18,7 @@ namespace BatHawk.NuGetServer
 
         public NugetService()
         {
-            _timer = new Timer(Int32.Parse(watchTimer)) { AutoReset = true };
+            _timer = new Timer(Int32.Parse(_watchTimer)) { AutoReset = true };
             _timer.Elapsed += (sender, eventArgs) => Console.WriteLine("It is {0} and all is well", DateTime.Now);
 
         }
@@ -30,7 +30,7 @@ namespace BatHawk.NuGetServer
             Console.WriteLine("NugetService Started.");
 
 
-            _app = WebApp.Start<Startup>(baseAddress);
+            _app = WebApp.Start<Startup>(_baseAddress);
             return _app != null;
         }
 
