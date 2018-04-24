@@ -13,20 +13,20 @@ namespace BatHawk.NuGetServer
         private IDisposable _app;
 
 
-        readonly Timer _timer;
+        //readonly Timer _timer;
 
 
         public NugetService()
         {
-            _timer = new Timer(Int32.Parse(_watchTimer)) { AutoReset = true };
-            _timer.Elapsed += (sender, eventArgs) => Console.WriteLine("It is {0} and all is well", DateTime.Now);
+            //_timer = new Timer(Int32.Parse(_watchTimer)) { AutoReset = true };
+            //_timer.Elapsed += (sender, eventArgs) => Console.WriteLine("It is {0} and all is well", DateTime.Now);
 
         }
 
 
         public bool Start(HostControl hostControl)
         {
-            _timer.Start();
+            //_timer.Start();
             Console.WriteLine("NugetService Started.");
 
 
@@ -37,7 +37,8 @@ namespace BatHawk.NuGetServer
 
         public bool Stop(HostControl hostControl)
         {
-            _timer.Stop();
+            Console.WriteLine("NugetService Stoping.");
+            //_timer.Stop();
             return _app != null;
         }
     }

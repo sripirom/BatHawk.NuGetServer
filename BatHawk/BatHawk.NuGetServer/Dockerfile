@@ -1,4 +1,5 @@
 FROM mono:latest
+LABEL maintainer="pichit@sripirom.com"
 
 ADD ./bin/Debug/ .
 
